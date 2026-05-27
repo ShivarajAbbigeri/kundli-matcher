@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kundli Matcher</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+    <h1>Kundli Matcher</h1>
+
+    <!-- Groom -->
+    <article>
+
+        <h2>Your Profile</h2>
+
+        <div id="profile-summary" class="hidden">
+
+            <div class="summary-card">
+
+                <h3 id="summary-name"></h3>
+
+                <p id="summary-dob"></p>
+
+                <p id="summary-time"></p>
+
+                <p id="summary-district"></p>
+
+                <button
+                    type="button"
+                    id="edit-profile-btn"
+                >
+                    Edit Profile
+                </button>
+
+            </div>
+
+        </div>
+
+        <form id="groom-form" class="hidden">
+
+            <input
+                type="text"
+                id="groom-name"
+                placeholder="Name (Optional)"
+            >
+
+            <!-- DOB -->
+            <div class="grid">
+
+                <select id="groom-day">
+                    <option value="">Day</option>
+                </select>
+
+                <select id="groom-month">
+                    <option value="">Month</option>
+                </select>
+
+                <select id="groom-year">
+                    <option value="">Year</option>
+                </select>
+
+            </div>
+
+            <!-- TIME -->
+            <div class="grid">
+
+                <input
+                    type="number"
+                    id="groom-hour"
+                    placeholder="Hour (0-23)"
+                    min="0"
+                    max="23"
+                >
+
+                <input
+                    type="number"
+                    id="groom-minute"
+                    placeholder="Minute"
+                    min="0"
+                    max="59"
+                >
+
+            </div>
+
+            <!-- DISTRICT -->
+            <select id="groom-district">
+                <option value="">
+                    Select Karnataka District
+                </option>
+            </select>
+
+            <button type="submit">
+                Save Profile
+            </button>
+
+            <p id="profile-status"></p>
+
+        </form>
+
+    </article>
+
+    <!-- Candidate -->
+    <article>
+
+        <h2>Check Match</h2>
+
+        <form id="candidate-form">
+
+            <input
+                type="text"
+                id="candidate-name"
+                placeholder="Name (Optional)"
+            >
+
+            <!-- DOB -->
+            <div class="grid">
+
+                <select id="candidate-day">
+                    <option value="">Day</option>
+                </select>
+
+                <select id="candidate-month">
+                    <option value="">Month</option>
+                </select>
+
+                <select id="candidate-year">
+                    <option value="">Year</option>
+                </select>
+
+            </div>
+
+            <!-- TIME -->
+            <div class="grid">
+
+                <input
+                    type="number"
+                    id="candidate-hour"
+                    placeholder="Hour (0-23)"
+                    min="0"
+                    max="23"
+                >
+
+                <input
+                    type="number"
+                    id="candidate-minute"
+                    placeholder="Minute"
+                    min="0"
+                    max="59"
+                >
+
+            </div>
+
+            <!-- DISTRICT -->
+            <select id="candidate-district">
+                <option value="">
+                    Select Karnataka District
+                </option>
+            </select>
+
+            <button type="submit">
+                Check Match
+            </button>
+
+            <p id="candidate-status"></p>
+
+        </form>
+
+    </article>
+
+    <!-- Result -->
+    <article id="result-card">
+
+        <h2>Result</h2>
+
+        <h1 id="result-score">-- / 36</h1>
+
+        <p id="result-message">
+            Match status will appear here
+        </p>
+
+        <!-- DETAILS -->
+        <details id="details-section" class="hidden">
+
+            <summary>
+                Show Detailed Matching
+            </summary>
+
+            <div id="details-container"></div>
+
+        </details>
+
+    </article>
+
+</main>
+
+<script src="data/districts.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
